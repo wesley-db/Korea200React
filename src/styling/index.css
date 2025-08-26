@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-lobster-two: "Lobster Two", "sans-serif";
+
+    --color-sky-blue: #3B8ED5;
+}
+
