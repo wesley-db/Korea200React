@@ -2,40 +2,42 @@ import classNames from "classnames";
 import heartIcon from "../assets/heart-icon.svg";
 
 export function Logo({ style }) {
-    const baseStyle = classNames(
+    /*Styling*/
+    const logo = classNames(
         "font-lobster-two italic",
         "text-white",
         "text-center",
         //text-shadow-[first-four outlines the text, the last is the shadow]
         "text-shadow-[-1px_-1px_black,1px_-1px_black,1px_1px_black,-1px_1px_black,0.1em_0.1em_black]",
+        "mx-auto my-auto",
         style
     );
 
-    return <h1 className={baseStyle}>Korea200</h1>;
+    /*Structure*/
+    return <h1 className={logo}>Korea200</h1>;
 }
 
 export function SearchBar({ value, action, style }) {
-    const formStyle = classNames(
+    /*Styling*/
+    const form = classNames(
         "flex gap-x-2",
-        //"focus-within:bg-linear-to-b from-red-500 to-blue-500",
         "md:gap-x-4",
-        //"focus-within:outline-1",
         style
     );
-    const textBoxStyle = classNames(
-        "bg-white",
+    const textBox = classNames(
         "text-center",
+        "bg-white",
         "border-2 rounded-3xl",
         "focus:border-none focus:outline-none",
         "w-full h-full"
     );
-    const outline = classNames(
+    const textBoxOutline = classNames(
         "w-5/6 h-full", 
         "p-1",
         "rounded-3xl", 
         "focus-within:bg-linear-to-b from-red-500 to-blue-500 focus-within:ring-1"
     );
-    const searchButtonStyle = classNames(
+    const button = classNames(
         "text-white",
         "bg-black",
         "w-1/6 h-full",
@@ -44,27 +46,31 @@ export function SearchBar({ value, action, style }) {
         "active:bg-gray-500"
     );
 
+    /*Structure*/
     return (
-        <form onSubmit={action} className={formStyle}>
-            <div className={outline}>
+        <form onSubmit={action} className={form}>
+            <div className={textBoxOutline}>
                 <input
                     type="text"
                     value={value}
                     placeholder="Please type a korean word."
-                    className={textBoxStyle}
+                    className={textBox}
                 />
             </div>
-            <input type="submit" value="Search" className={searchButtonStyle} />
+            <input type="submit" value="Search" className={button} />
         </form>
     );
 }
 
 export function HeartIcon({ style, action }) {
-    const buttonStyle = classNames(style);
+    /*Styling*/
+    const button = classNames(style, "active:scale-75");
+    const image = classNames("h-full","object-contain", "mx-auto");
 
+    /*Structure*/
     return (
-        <button onClick={action} className={buttonStyle}>
-            <img src={heartIcon} alt="HeartIcon" />
+        <button onClick={action} className={button}>
+            <img src={heartIcon} alt="HeartIcon" className={image} />
         </button>
     );
 }
