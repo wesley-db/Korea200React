@@ -64,7 +64,7 @@ export function SearchBar({ value, action, style }) {
 
 export function HeartIcon({ style, action }) {
     /*Styling*/
-    const button = classNames(style, "active:scale-75");
+    const button = classNames(style, "hover:scale-125", "active:scale-75");
     const image = classNames("h-full","object-contain", "mx-auto");
 
     /*Structure*/

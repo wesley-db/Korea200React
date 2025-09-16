@@ -13,7 +13,7 @@ export function HomePage() {
         "fixed right-0",
 		"m-4",
         "size-1/9",
-		"md:size-1/15 md:m-7"
+		"md:m-7"
 	);
 
     /*Structure*/
