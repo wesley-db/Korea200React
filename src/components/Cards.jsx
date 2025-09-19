@@ -40,28 +40,58 @@ export function RecordCard({ data, searchWord, style }) {
     );
 }
 
-//export function PopUpCard({ style }) {
+export function PopUpCard({ action, style }) {
     /*Styling*/
-    /*const background = classNames(
+    const background = classNames(
         "fixed",
-        "bg-black/20",
+        "bg-black/40",
         "inset-0",
         "flex",
         "justify-center", // Horizontally centers the children
-        "p-10",
         style
     );
-    const card = classNames("!bg-white");*/
+    const cardBackground = classNames(
+        "!bg-white",
+        "m-10",
+        "h-fit !w-fit",
+        "lg:text-xl"
+    );
+    const cardForm = classNames("flex flex-col", "gap-2");
+    const header = classNames("font-medium", "text-xl", "lg:text-3xl");
+    const textBox = classNames(
+        "border",
+        "rounded-sm",
+        "p-1",
+        "w-xs",
+        "lg:w-lg"
+    );
+    const submit = classNames(
+        "self-end",
+        "pr-5",
+        "underline italic",
+        "text-blue-800 text-center",
+        "active:text-purple-600"
+    );
 
     /*Structure*/
-    /*return (
+    return (
         <div className={background}>
-            <Card style={card}>
-                <h1>What is your name?</h1>
+            <Card style={cardBackground}>
+                <form onSubmit={action} className={cardForm}>
+                    <h1 className={header}>What is your name?</h1>
+                    <input
+                        type="text"
+                        placeholder="Please type your name."
+                        className={textBox}
+                    />
+                    <input type="submit" value="submit" className={submit} />
+                </form>
             </Card>
         </div>
     );
-}*/
+}
+
+/****************Utilities********************************/
 
 function Card({ style, action, children }) {
     /*Styling*/
